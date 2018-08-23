@@ -51,11 +51,11 @@ def results():
                     foreground_counts[term] = 1
                     if term not in term_names:
                         term_names[term] = name
-                if organism in background_organisms:
-                    if term in background_counts:
-                        background_counts[term] += 1
-                    else:
-                        background_counts[term] = 1
+            if organism in background_organisms:
+                if term in background_counts:
+                    background_counts[term] += 1
+                else:
+                    background_counts[term] = 1
 
     # Loop over counted terms, calculate statistics, and print results.
     results = []
@@ -78,4 +78,4 @@ def results():
     return render_template('results.html', results=results, enrichment=bool(background_counts))
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0', port=9001)
