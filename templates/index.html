@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<title>SimpleCount</title>
+<link rel="stylesheet" href="/static/bootstrap.min.css" />
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+<h1>SimpleCount</h1>
+</div>
+
+<div class="container">
+<p>
+<form action="/results" method="post">
+
+<div>
+<div style="display:inline-block; vertical-align:top;">
+Foreground<br/>
+<textarea name="foreground" cols="40" rows="10"></textarea>
+</div>
+<div style="display:inline-block; margin-right:20px; vertical-align:top;">
+Background<br/>
+<textarea name="background" cols="40" rows="10"></textarea>
+</div>
+</div>
+
+<div style="">
+<div style="display:inline-block; vertical-align:top;">
+Dictionary:<br/>
+<select name="dictionary">
+<option value="disease">Diseases</option>
+<option value="tissue">Tissues</option>
+</select>
+</div>
+<div style="display:inline-block; vertical-align:top;">
+Z-score cutoff:<br/>
+<input type="number" step="0.01" name="zcutoff" value="5.0" vertical-align:top;/>
+</div>
+<div style="display:inline-block; vertical-align:top;">
+P-value cutoff:<br/>
+<input type="number" step="0.001" name="pcutoff" value="0.05" />
+</div>
+</div>
+
+<div>
+<input type="submit" value="Count" />
+</div>
+
+</form>
+</p>
+</div>
+
+</body>
+
+</html>

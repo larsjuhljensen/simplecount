@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<title>SimpleCount</title>
+<link rel="stylesheet" href="/static/bootstrap.min.css" />
+<link rel="stylesheet" href="/static/style.css" />
+<script src="/static/sorttable.js"></script>
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+<h1>SimpleCount</h1>
+</div>
+
+<div class="container">
+
+<table class="sortable">
+{% if enrichment %}
+<thead>
+<tr>
+<th>Term</th>
+<th>Name</th>
+<th>Foreground count</th>
+<th>Background count</th>
+<th>P-value</th>
+</tr>
+</thead>
+<tbody>
+{% for term, name, foreground, background, pvalue in results %}
+<tr>
+<td>{{term}}</td>
+<td>{{name}}</td>
+<td>{{foreground}}</td>
+<td>{{background}}</td>
+<td>{{pvalue}}</td>
+</tr>
+{% endfor %}
+</tbody>
+{% else %}
+<thead>
+<tr>
+<th>Term</th>
+<th>Name</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+{% for term, name, count in results %}
+<tr>
+<td>{{term}}</td>
+<td>{{name}}</td>
+<td>{{count}}</td>
+</tr>
+{% endfor %}
+</tbody>
+{% endif %}
+</table>
+
+</div>
+
+</body>
+
+</html>
